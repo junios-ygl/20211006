@@ -1,51 +1,60 @@
 #include <iostream>
 #include "Engine.h"
 #include "Actor.h"
-#include <vector> //STL
+#include <vector> //STL //TArray
+#include <list>
+#include <map> //Map
+#include <set>	//set
+#include <algorithm>  //shuffle, search, sort
 
 using namespace std;
 
-//template function
-template<typename T, typename T1, typename T2>
-T2 Add(T a, T1 b)
-{
-	return a + b;
-}
-
-//template class
-template<typename T>
-class NumerStore
-{
-public:
-	T Store[100];
-};
-
-//function overloding
-int Add(int A, int B)
-{
-	return A + B;
-}
-
-float Add(float A, float B)
-{
-	return A + B;
-}
-
-
-
 int main()
 {
-	NumerStore<int> IntStore;
-	NumerStore<float> FloatStore;
+	//list<int> IntListStore;
+	//for (int i = 1; i <= 10; ++i)
+	//{
+	//	IntListStore.push_back(i);
+	//}
 
-	FloatStore.Store[0] = 10.0f;
-	IntStore.Store[0] = 10;
 
-	int a = 2;
-	int b = 3;
-		
-	cout << Add<int, int, int>(a, b) << endl;
-	cout << Add<int, float, float>(2, 3.0f) << endl;
+	//for (auto v : IntListStore)
+	//{
+	//	cout << v << endl;
+	//}
+//	for (auto iter = IntListStore.begin(); iter != IntListStore.end(); ++iter)
+////	for (list<int>::iterator iter = IntListStore.begin(); iter != IntListStore.end(); ++iter) 
+//	{
+//		cout << *iter << endl;
+//	}
+//
+	vector<int> IntStore;
+
+	for (int i = 1; i <= 10; ++i)
+	{
+		IntStore.push_back(i);
+	}
+
+	cout << IntStore.capacity() << endl;
+
+
+	//random_shuffle<vector<int>::iterator>(IntStore.begin(), IntStore.end());
+
+	//for (auto v : IntStore) //range for
+	//{
+	//	cout << v << endl;
+	//}
+
+//	//IntStore.erase(IntStore.begin() + 3);
+//	//IntStore.insert(IntStore.begin() + 2, 11);
+//
+//	for (auto iter = IntStore.begin(); iter != IntStore.end(); ++iter)
+//	//for (size_t i = 0; i < IntStore.size(); ++i)
+//	{
+//		cout << *iter << endl;
+//	}
+//
+
 
 
 //	Engine* engine = new Engine();
