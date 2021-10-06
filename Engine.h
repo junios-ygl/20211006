@@ -1,5 +1,11 @@
 #pragma once
 
+
+//STL, C++
+#include <vector>
+
+using namespace std;
+
 class Actor;
 
 class Engine
@@ -22,8 +28,6 @@ private:
 	void Render();
 	void BeginOverlap();
 
-	Actor* Actors[1000];
-
-	int CountOfActors = 0;
+	vector<Actor*> Actors;
 };
 

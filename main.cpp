@@ -1,32 +1,22 @@
 #include <iostream>
 #include "Engine.h"
 #include "Actor.h"
-#include <vector>
+#include <vector> //STL
 
 using namespace std;
 
 int main()
 {
-	vector<Actor*> Actors;
+	Engine* engine = new Engine();
 
-	Actors.push_back(new Actor());
-	Actors.push_back(new Actor());
-	Actors.push_back(new Actor());
-	Actors.push_back(new Actor());
+	engine->SpawnActor();
+	engine->SpawnActor();
 
-	cout << Actors.size() << endl;
+	engine->DestroyActor(0);
 
+	engine->Run();
 
-	//Engine* engine = new Engine();
-
-	//engine->SpawnActor();
-	//engine->SpawnActor();
-
-	//engine->DestroyActor(0);
-
-	//engine->Run();
-
-	//delete engine;
+	delete engine;
 
 	return 0;
 }
