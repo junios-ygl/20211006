@@ -1,73 +1,36 @@
-#include <iostream>
-#include "Engine.h"
-#include "Actor.h"
-#include <vector> //STL //TArray
-#include <list>
-#include <map> //Map
-#include <set>	//set
-#include <algorithm>  //shuffle, search, sort
+﻿#include <iostream>
+//STL
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-	//list<int> IntListStore;
-	//for (int i = 1; i <= 10; ++i)
-	//{
-	//	IntListStore.push_back(i);
-	//}
+	string HelloWorld = "Hello World";
+	string HelloWorldInKorean = "ㄱ"; //euc-kr, utf-8
+//	HelloWorld[0] = 'J';
 
+	cout << HelloWorld.size() << endl;
+	cout << HelloWorldInKorean.size() << endl;
 
-	//for (auto v : IntListStore)
-	//{
-	//	cout << v << endl;
-	//}
-//	for (auto iter = IntListStore.begin(); iter != IntListStore.end(); ++iter)
-////	for (list<int>::iterator iter = IntListStore.begin(); iter != IntListStore.end(); ++iter) 
-//	{
-//		cout << *iter << endl;
-//	}
-//
-	vector<int> IntStore;
-
-	for (int i = 1; i <= 10; ++i)
+	string UpperCase = "";
+	string LowerCase = "";
+	
+	for (auto S : HelloWorld)
 	{
-		IntStore.push_back(i);
+		UpperCase.push_back(toupper(S));
 	}
 
-	cout << IntStore.capacity() << endl;
+	for (auto S : HelloWorld)
+	{
+		LowerCase.push_back(tolower(S));
+	}
 
+	cout << UpperCase << endl;
+	cout << LowerCase << endl;
 
-	//random_shuffle<vector<int>::iterator>(IntStore.begin(), IntStore.end());
+	cout << HelloWorld + HelloWorldInKorean << endl;
 
-	//for (auto v : IntStore) //range for
-	//{
-	//	cout << v << endl;
-	//}
-
-//	//IntStore.erase(IntStore.begin() + 3);
-//	//IntStore.insert(IntStore.begin() + 2, 11);
-//
-//	for (auto iter = IntStore.begin(); iter != IntStore.end(); ++iter)
-//	//for (size_t i = 0; i < IntStore.size(); ++i)
-//	{
-//		cout << *iter << endl;
-//	}
-//
-
-
-
-//	Engine* engine = new Engine();
-//
-//	(*engine).SpawnActor();
-//	 //Wall, Player, Goal(Object)
-//	engine->SpawnActor();
-//
-////	engine->DestroyActor(0);
-//
-//	engine->Run();
-//
-//	delete engine;
-//
 	return 0;
 }
