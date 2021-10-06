@@ -9,10 +9,11 @@ int main()
 {
 	Engine* engine = new Engine();
 
-	engine->SpawnActor();
+	(*engine).SpawnActor();
+	 //Wall, Player, Goal(Object)
 	engine->SpawnActor();
 
-	engine->DestroyActor(0);
+//	engine->DestroyActor(0);
 
 	engine->Run();
 
